@@ -41,6 +41,7 @@ async function AddProduct(values: FormValues) {
 
       const { data } = await axios.post(
       'http://localhost:5000/product',
+     // 'https://e-commercenodejs.onrender.com/product',
       formData,
       {
         headers: {
@@ -105,6 +106,7 @@ async function AddProduct(values: FormValues) {
       try {
 
         let { data } = await axios.get(`http://localhost:5000/product?limit=30&page=1`);
+        //let { data } = await axios.get(`https://e-commercenodejs.onrender.com?limit=30&page=1`);
         setProductData(data.data.allProduct);
       } catch (error) {
         console.error('Error fetching user profile:', error);
@@ -126,6 +128,7 @@ async function  handleDeleteProduct(id: string) {
     };
 
     const { data } = await axios.delete(`http://localhost:5000/product/${id}`, config);
+   // const { data } = await axios.delete(`https://e-commercenodejs.onrender.com/product/${id}`, config);
     if (data.status === 'success') {
       alert('Product deleted successfully');
     }

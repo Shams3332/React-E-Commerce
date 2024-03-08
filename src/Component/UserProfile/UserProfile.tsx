@@ -29,6 +29,7 @@ export default function UserProfile() {
 
         let { data } = await axios.get(
           `http://localhost:5000/users/userData/${ID}`,
+          //`https://e-commercenodejs.onrender.com/users/userData/${ID}`,
           config
         );
         setUserData(data.data);

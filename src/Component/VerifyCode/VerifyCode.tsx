@@ -16,6 +16,7 @@ export default function VerifyCode() {
   async function resetCode(values : any) {
     try {
       const { data } = await axios.post('http://localhost:5000/users/verifyCode', values);
+      //const { data } = await axios.post('https://e-commercenodejs.onrender.com/users/verifyCode', values);
 
       if (data.status === 'success') {
         navigate('/resetPassword');

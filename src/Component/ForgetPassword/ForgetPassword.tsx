@@ -13,6 +13,7 @@ export default function ForgetPassword() {
   async function ForgetPassword(values : any) {
     try {
       const { data } = await axios.post('http://localhost:5000/users/forgetPassword', values);
+      //const { data } = await axios.post('https://e-commercenodejs.onrender.com/users/forgetPassword', values);
 
       if (data.status === 'success') {
         navigate('/verifyCode');

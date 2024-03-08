@@ -26,6 +26,7 @@ export default function Register() {
     console.log('Register function called');
     try {
       const { data } = await axios.post('http://localhost:5000/users/signUp', values);
+      //const { data } = await axios.post('https://e-commercenodejs.onrender.com/users/signUp', values);
   
       if (data.status === 'success') {
         navigate('/loginUser');

@@ -15,6 +15,7 @@ export default function ResetPassword() {
     async function reset(values: any) {
         try {
             const { data } = await axios.post('http://localhost:5000/users/resetPassword', values);
+            //const { data } = await axios.post('https://e-commercenodejs.onrender.com/users/resetPassword', values);
             console.log('data', data);
 
             if (data.status === 'success') {

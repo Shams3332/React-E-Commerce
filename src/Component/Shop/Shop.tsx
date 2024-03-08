@@ -29,6 +29,7 @@ async function GetAllProducts(page: number) {
     try {
     const { data } = await axios.get(
         `http://localhost:5000/product?limit=9&page=${page}`
+        //`https://e-commercenodejs.onrender.com/product?limit=9&page=${page}`
     );
     setProductData(data.data.allProduct);
     } catch (error) {
@@ -49,7 +50,8 @@ const [CategoryData, setCategoryData] = useState<any[]>([]);
 
 async function GetAllCategories() {
         try {
-        let { data } = await axios.get(`http://localhost:5000/category`);
+        let { data } = await axios.get(`https://e-commercenodejs.onrender.com/category`);
+        //let { data } = await axios.get(`http://localhost:5000/category`);
         setCategoryData(data.data.allCategories);
         } catch (error) {
         console.error("Error fetching user profile:", error);
@@ -68,6 +70,7 @@ const [selectedCategoryId, setSelectedCategoryId] = useState<string | null>(null
 async function GetProductInCategory(categoryId: string) {
     try {
       let { data } = await axios.get(`http://localhost:5000/product/allProductsInCategory/${categoryId}`);
+      //let { data } = await axios.get(`https://e-commercenodejs.onrender.com/product/allProductsInCategory/${categoryId}`);
       setProductData(data.data.allCategoryProducts); 
     } catch (error) {
       console.error("Error fetching products in category:", error);
